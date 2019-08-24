@@ -183,7 +183,7 @@ def index():
            "" \
            "" \
            "" \
-           "With Love from Lakshya Srivastava"
+           "With Love from Lakshya Srivastavab :D"
 class Quote(Resource):
     def get(self, id=0):
         if id == 0:
