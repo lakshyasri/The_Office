@@ -1,6 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_restful import Api, Resource, reqparse
-import random, os
+import random, os, requests
 
 data = [
     {
@@ -175,6 +175,18 @@ def index():
     return render_template("index.html", user_image=full_filename)
 
 
+@app.route('/', methods=['POST'])
+def my_form_post():
+    text = request.form['inputString']
+    dest = int(text)
+    x = data[dest]
+    y = str(x)
+    return y
+
+    #processed_text = text.upper()
+    #return processed_text
+
+
 '''@app.route("/")
 def index():
     return "Hi welcome to The Office API beta, try adding /data/1 to the url.. full documentation coming soon.." \
@@ -197,4 +209,4 @@ class Quote(Resource):
 
 api.add_resource(Quote, "/data", "/data/", "/data/<int:id>")
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
