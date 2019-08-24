@@ -178,7 +178,12 @@ def index():
 
 @app.route("/")
 def index():
-    return "Hi welcome to The Office API beta, try adding /data/1 to the url.. full documentation coming soon.."
+    return "Hi welcome to The Office API beta, try adding /data/1 to the url.. full documentation coming soon.." \
+           "" \
+           "" \
+           "" \
+           "" \
+           "With Love from Lakshya Srivastava"
 class Quote(Resource):
     def get(self, id=0):
         if id == 0:
