@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask_restful import Api, Resource, reqparse
-import random, os, requests
+import random, os
 
 data = [
     {
