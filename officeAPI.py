@@ -1,6 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_restful import Api, Resource, reqparse
-import random, os
+import random
 
 data = [
     {
@@ -162,19 +162,19 @@ data = [
 ]
 
 # picFolder = os.path.join('static', 'pics')
-
-app = Flask(__name__)
 # app.config['UPLOAD_FOLDER'] = picFolder
+app = Flask(__name__)
+
 api = Api(app)
 
-
-@app.route("/")
+'''@app.route("/")
 def index():
-    #    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'mike.jpg')
+       full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'mike.jpg')
     return render_template("index.html")
 
 
 # , user_image=full_filename
+'''
 
 
 class Quote(Resource):
@@ -189,4 +189,4 @@ class Quote(Resource):
 
 api.add_resource(Quote, "/data", "/data/", "/data/<int:id>")
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
