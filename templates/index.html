@@ -13,6 +13,13 @@
             integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
             crossorigin="anonymous"></script>
     <style>
+    p.hometown {
+  background: Yellow;
+    }
+    code {
+  display: block;
+  white-space: pre-wrap
+}
     * {
   box-sizing: border-box;
 }
@@ -36,10 +43,116 @@
     <center><h3>Prison Mike</h3><img src="{{ user_image }}" alt="Mike" height="240px" width="200px"></center>
 </div>
 <form method="POST">
-    <div class="menu">&nbsp; &nbsp;https://api-the-office.herokuapp.com/<input type="text" name="inputString">&nbsp;
+    <div class="menu">Input Number between 0-25&nbsp; &nbsp; <p class="hometown">https://api-the-office.herokuapp.com/</p><input type="text" name="inputString" placeholder="I/P range(0-25) ? error">&nbsp;
         <input type="submit" name="go" value="Go"></div>
 </form>
+<br><br><br><br><br>
+<div>
+    <h5> &nbsp;&nbsp;&nbsp;Node.js</h5>
+    <code>
+        var unirest = require("unirest");
+
+        var req = unirest("GET", "https://the-office.p.rapidapi.com/4");
+
+        req.headers({
+	    "x-rapidapi-host": "the-office.p.rapidapi.com",
+	    "x-rapidapi-key": "e37710d18cmshd3f8ad761570e42p1eed9djsnc4fda47f9fa2"
+        });
 
 
+        req.end(function (res) {
+	    if (res.error) throw new Error(res.error);
+
+	    console.log(res.body);
+        });
+    </code>
+    <h5> &nbsp;&nbsp;&nbsp;Python</h5>
+    <code>
+        import requests
+
+        url = "https://the-office.p.rapidapi.com/4"
+
+        headers = {
+        'x-rapidapi-host': "the-office.p.rapidapi.com",
+        'x-rapidapi-key': "e37710d18cmshd3f8ad761570e42p1eed9djsnc4fda47f9fa2"
+        }
+
+        response = requests.request("GET", url, headers=headers)
+
+    print(response.text)
+    </code>
+<br><p>&nbsp;&nbsp;&nbsp;For more snippets go to Rapid API link in footer and Github for Code.</p>
+</div>
+<div><br><br><br>
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">That's What She Said!</h5>
+        <p>P.M me for contribution and donation. Thanks. And Please subscribe to my YouTube channel.
+        Have fun making weird games, quizes and projects from this.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+            <li>
+            <a href="https://www.youtube.com/user/lakshya101">YouTube</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/lakshya-srivastava/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://rapidapi.com/lakshyasri/api/the-office">RapidAPI</a>
+          </li>
+          <li>
+            <a href="https://github.com/lakshyasri">GitHub</a>
+          </li>
+          <li>
+            <a href="https://stackoverflow.com/users/9393525/lakshya-srivastava">StackOverflow</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> lakshyasri@outlook.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+    </div>
 </body>
 </html>
