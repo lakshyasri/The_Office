@@ -1,9 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Api, Resource, reqparse
-import random
-
-app = Flask(__name__)
-api = Api(app)
+import random, os
 
 data = [
     {
@@ -163,6 +160,21 @@ data = [
         "seasons": "2-9"
     }
 ]
+
+# picFolder = os.path.join('static', 'pics')
+
+app = Flask(__name__)
+# app.config['UPLOAD_FOLDER'] = picFolder
+api = Api(app)
+
+
+@app.route("/")
+def index():
+    #    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'mike.jpg')
+    return render_template("index.html")
+
+
+# , user_image=full_filename
 
 
 class Quote(Resource):
