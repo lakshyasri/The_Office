@@ -1,6 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Api, Resource, reqparse
-import random
+import random, os
 
 data = [
     {
@@ -161,29 +161,30 @@ data = [
     }
 ]
 
-# picFolder = os.path.join('static', 'pics')
-# app.config['UPLOAD_FOLDER'] = picFolder
 app = Flask(__name__)
 
 api = Api(app)
 
-'''@app.route("/")
-def index():
-       full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'mike.jpg')
-    return render_template("index.html")
+picFolder = os.path.join('static', 'pics')
+app.config['UPLOAD_FOLDER'] = picFolder
 
-
-# , user_image=full_filename
-'''
 
 @app.route("/")
+def index():
+    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'mike.jpg')
+    return render_template("index.html", user_image=full_filename)
+
+
+'''@app.route("/")
 def index():
     return "Hi welcome to The Office API beta, try adding /data/1 to the url.. full documentation coming soon.." \
            "" \
            "" \
            "" \
            "" \
-           "With Love from Lakshya Srivastavab <3 :D"
+           "With Love from Lakshya Srivastava <3 :D"'''
+
+
 class Quote(Resource):
     def get(self, id=0):
         if id == 0:
