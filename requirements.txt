@@ -1,4 +1,4 @@
 flask
 flask-restful
 gunicorn
-Jinja2==2.6
+Jinja2==2.10.1
