@@ -209,4 +209,4 @@ class Quote(Resource):
 
 api.add_resource(Quote, "/data", "/data/", "/data/<int:id>")
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
