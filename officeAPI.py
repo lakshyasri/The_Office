@@ -183,8 +183,14 @@ def my_form_post():
     y = str(x)
     return y
 
-    #processed_text = text.upper()
-    #return processed_text
+
+@app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html')
+
+
+# processed_text = text.upper()
+# return processed_text
 
 
 '''@app.route("/")
